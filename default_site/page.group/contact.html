@@ -1,0 +1,31 @@
+{embed="site/_wrapper"}
+
+{exp:stash:set name="content" parse_tags="yes"}
+	<article>
+		{exp:channel:entries
+			channel="page"
+			limit="1"
+			disable="categories|category_fields|member_data|pagination"}
+
+			{page_content}
+
+		{/exp:channel:entries}
+
+		<div id="notification" style="display: none;"></div>
+		<form id="contact" action="mail.php" method="post">
+			<label for="your_name">Your Name</label>
+			<input type="text" name="Your_Name" id="your_name">
+
+			<label for="email_address">Email Address</label>
+			<input type="text" name="Email_Address" id="email_address" placeholder="john.smith@domain.com">
+
+			<label for="phone_number">Phone Number</label>
+			<input type="text" name="Phone_Number" id="phone_number">
+
+			<label for="message">Message</label>
+			<textarea name="Message" id="message" rows="10"></textarea>
+
+			<input type="submit" value="Send">
+		</form>
+	</article>
+{/exp:stash:set}

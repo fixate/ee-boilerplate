@@ -1,0 +1,19 @@
+$backgroundColor: #f2dede;
+$borderColor: #eed3d7;
+$textColor: #b94a48;
+
+#update_browser {
+	background-color: $backgroundColor;
+	border-bottom: 1px solid $borderColor;
+	color: $textColor;
+	margin: 0;
+	padding: 0;
+	p {
+		margin: 0 auto;
+		padding: 1em;
+		width: 90%;
+	}
+	a {
+		color: $textColor;
+	}
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{seo_title}
+	<link rel="author" href="{global:template}/_meta/humans.txt">
+	<link href="{global:template}/_css/styles.css" rel="stylesheet">
+</head>
+<body>
+	<!--[if lt IE 9]>{update_browser}<![endif]-->
+
+	<nav>
+		{exp:structure:nav
+			start_from="/"
+			show_depth="999"
+			css_id="none"
+			cache="yes"
+			refresh="15"}
+	</nav>
+
+	{!-- If on a subpage that has an entry_id. Otherwise, we'll assume they are on a 404 page. --}
+	{if segment_1 && structure:page:entry_id}
+		<header>
+			<h1>{structure:page:title}</h1>
+		</header>
+	{/if}
+
+	{exp:stash:get name="content"}
+
+	{embed="site/_sidebar"}
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="{global:template}/_js/plugins/jquery.js"><\/script>')</script>
+	<script src="{global:template}/_js/app.js"></script>
+</body>
+</html>

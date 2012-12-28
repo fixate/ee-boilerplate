@@ -1,0 +1,41 @@
+{exp:switchee variable="{segment_1}" parse="inward"}
+	{case value="news"}
+		<h3>Categories</h3>
+		<ul>
+			{exp:channel:categories
+				channel="news"
+				style="linear"
+				show_empty="no"
+				disable="category_fields"}
+
+				<li><a href="{path="news/index"}">{category_name}</a></li>
+
+			{/exp:channel:categories}
+		</ul>
+
+		<h3>Archives</h3>
+		<ul>
+			{exp:channel:month_links
+				channel="news"
+				limit="12"}
+
+				<li><a href="{path="news/archive"}">{month} {year}</a></li>
+
+			{/exp:channel:month_links}
+		</ul>
+
+		<h3>RSS Feeds</h3>
+		<ul>
+			<li><a href="/news/rss">All categories</a></li>
+			{exp:channel:categories
+				channel="news"
+				style="linear"
+				show_empty="no"
+				disable="category_fields"}
+
+				<li><a href="{path="news/rss"}">{category_name}</a></li>
+
+			{/exp:channel:categories}
+		</ul>
+	{/case}
+{/exp:switchee}

@@ -1,0 +1,52 @@
+{embed="site/_wrapper"}
+
+{!-- Model variables --}
+{preload_replace:channel="news"}
+{preload_replace:limit="10"}
+{preload_replace:no_result_message='No news articles available at this time.'}
+
+{exp:stash:set name="content" parse_tags="yes" no_results_prefix="stash"}
+	{exp:channel:entries
+		channel="page"
+		limit="1"
+		disable="categories|category_fields|member_data|pagination"}
+
+		{page_content}
+
+	{/exp:channel:entries}
+
+	{!-- Display category/archive heading if active --}
+	{if triggers:entries_title}
+		<h2>Viewing all articles {triggers:entries_title}</h2>
+	{/if}
+
+	<section id="articles">
+		{exp:channel:entries
+			channel="{channel}"
+			limit="{limit}"
+			paginate="bottom"
+			disable="categories|category_fields|member_data"
+			dynamic="no"
+			{triggers:entries}}
+
+			{if stash:no_results}
+				<p class="no_results">{no_result_message}</p>
+			{/if}
+
+			<article>
+				<header>
+					<h2><a href="{page_url}">{title}</a></h2>
+					<p>
+						<time datetime="{entry_date format='{DATE_W3C}'}" pubdate>
+							Posted on {entry_date format="%l, %F %d, %Y"}
+						</time>
+					</p>
+				</header>
+				<p>{exp:eehive_hacksaw chars="160"}{news_content}{/exp:eehive_hacksaw}</p>
+			</article>
+
+			{stash:embed name="common:pagination" process="start"}
+
+		{/exp:channel:entries}
+	</section>
+{/exp:stash:set}

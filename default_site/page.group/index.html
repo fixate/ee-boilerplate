@@ -1,0 +1,14 @@
+{embed="site/_wrapper"}
+
+{exp:stash:set name="content" parse_tags="yes"}
+	<article>
+		{exp:channel:entries
+			channel="page"
+			limit="1"
+			disable="categories|category_fields|member_data|pagination"}
+
+			{page_content}
+
+		{/exp:channel:entries}
+	</article>
+{/exp:stash:set}

@@ -1,0 +1,12 @@
+compress_assets: off
+gzip_assets: off
+javascript_compressor: uglifier
+
+javascripts:
+  _js/app:
+    - _js/plugins/contact-form/validation.js
+    - _js/plugins/contact-form/form.js
+    - _js/plugins/contact-form/index.js
+    - _js/plugins/pager/pager.js
+    - _js/plugins/pager/index.js
+    - _js/app/analytics.js

@@ -1,0 +1,25 @@
+{paginate}
+	{pagination_links}
+		<ul class="pagination">
+			{first_page}
+				<li><a href="{pagination_url}">&larr; First</a></li>
+			{/first_page}
+
+			{previous_page}
+				<li><a href="{pagination_url}">&larr;</a></li>
+			{/previous_page}
+
+			{page}
+				<li{if current_page} class="active"{/if}><a href="{pagination_url}">{pagination_page_number}</a></li>
+			{/page}
+
+			{next_page}
+				<li><a href="{pagination_url}">&rarr;</a></li>
+			{/next_page}
+
+			{last_page}
+				<li><a href="{pagination_url}">Last &rarr;</a></li>
+			{/last_page}
+		</ul>
+	{/pagination_links}
+{/paginate}

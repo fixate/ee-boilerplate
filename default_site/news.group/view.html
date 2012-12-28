@@ -1,0 +1,21 @@
+{embed="site/_wrapper"}
+
+{preload_replace:channel="news"}
+
+{exp:stash:set name="content" parse_tags="yes"}
+	<article>
+		{exp:channel:entries
+			channel="{channel}"
+			limit="1"
+			disable="categories|category_fields|member_data|pagination"}
+
+		<p>
+			<time datetime="{entry_date format='{DATE_W3C}'}" pubdate>
+				Posted on {entry_date format="%l, %F %d, %Y"}
+			</time>
+		</p>
+		{news_content}
+
+		{/exp:channel:entries}
+	</article>
+{/exp:stash:set}

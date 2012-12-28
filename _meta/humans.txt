@@ -1,0 +1,9 @@
+/* TEAM */
+Developer/Designer: Reusser Design, LLC
+Site: http://reusserdesign.com
+Twitter: @reusserdesign
+Location: Roanoke, Indiana
+
+/* SITE */
+Standards: HTML5, CSS3
+Software: ExpressionEngine

@@ -1,0 +1,39 @@
+{preload_replace:channel="news"}
+{preload_replace:limit="10"}
+
+{exp:rss:feed channel="{channel}"}
+	<rss version="2.0">
+		{exp:switchee variable="{segment_3}" parse="inward"}
+			{case default="yes"}
+				<channel>
+					<title>{channel_name} | {site_name}</title>
+					<link>{site_url}{segment_1}/{segment_2}</link>
+					<description>The general {channel_name} feed for {site_name}.</description>
+					{exp:channel:entries channel="{channel}" limit="{limit}" dynamic_start="on" disable="categories|category_fields|member_data|pagination"}
+						<item>
+							<title>{exp:xml_encode}{title}{/exp:xml_encode}</title>
+							<link>{page_url}</link>
+							<description><![CDATA[{news_content}]]></description>
+							<pubDate>{gmt_entry_date format="{DATE_RFC822}"}</pubDate>
+						</item>
+					{/exp:channel:entries}
+				</channel>
+			{/case}
+			{case value="category"}
+				<channel>
+					<title>Articles posted in {segment_4_category_name} | {channel_name} | {site_name}</title>
+					<link>{site_url}{segment_1}/{segment_2}/{segment_3}/{segment_4}</link>
+					<description>The {segment_4_category_name} category feed for {site_url}</description>
+					{exp:channel:entries channel="{channel}" limit="{limit}" dynamic_start="on" category="{segment_4_category_id}" disable="categories|category_fields|member_data|pagination"}
+						<item>
+							<title>{exp:xml_encode}{title}{/exp:xml_encode}</title>
+							<link>{page_url}</link>
+							<description><![CDATA[{news_content}]]></description>
+							<pubDate>{gmt_entry_date format="{DATE_RFC822}"}</pubDate>
+						</item>
+					{/exp:channel:entries}
+				</channel>
+			{/case}
+		{/exp:switchee}
+	</rss>
+{/exp:rss:feed}
