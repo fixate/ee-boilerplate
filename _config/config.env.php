@@ -16,19 +16,19 @@ if ( ! defined('ENV'))
 {
 	switch ($_SERVER['HTTP_HOST']) {
 		// Make sure you have domain.com AND www.domain.com connecting to the production database.
-		case 'domain.com' :
+		case '[domain.com]' :
 			define('ENV', 'prod');
 			define('ENV_FULL', 'Production');
 			define('ENV_DEBUG', FALSE);
 		break;
 
-		case 'www.domain.com' :
+		case '[www.domain.com]' :
 			define('ENV', 'prod');
 			define('ENV_FULL', 'Production');
 			define('ENV_DEBUG', FALSE);
 		break;
 
-		case 'ee.rdpreview4.com' :
+		case '[test.domain.com]' :
 			define('ENV', 'dev');
 			define('ENV_FULL', 'Development');
 			define('ENV_DEBUG', TRUE);
