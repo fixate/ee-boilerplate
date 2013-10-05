@@ -1,0 +1,28 @@
+  <!--[if lte IE 8]>
+  <div class="wrap">
+    <div class="alert-danger">Your browser is <em>ancient!</em> You can experience a better web if you <a href="http://browsehappy.com/">upgrade to a modern browser</a>.</div>
+  </div>
+  <![endif]-->
+
+  <header class="area-header">
+
+    {!-- allow screenreaders to skip navigation --}
+    <a class="visuallyhidden" href="#main">skip navigation and go to main content</a>
+
+    <a class="logo" href="{site_url}">
+      <svg width="100" height="100">
+        <image xlink:href="{global:template}/_img/web-design-logo-fixate.svg" src="{global:template}/_img/web-design-logo-fixate.png"  width="100" height="100" />
+      </svg>
+    </a>
+
+    <nav>
+    {exp:structure:nav
+    start_from="/"
+    show_depth="999"
+    css_id="none"
+    cache="yes"
+    refresh="15"}
+    </nav>
+
+  </header>
+
