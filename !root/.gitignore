@@ -1,0 +1,37 @@
+.DS_STORE
+
+# ignore grunt files and folders
+node_modules
+npm-debug.log
+
+# ignore dev files and folders
+dist
+.tmp
+
+# ignore sass files and folders
+config.rb
+.sass-cache/
+
+# ignore symlinked styleguide folders and files
+styleguide/css
+styleguide/img
+styleguide/fnt
+styleguide/style.css
+styleguide/main.js
+
+# ignore local/ dev config
+config.local.php
+
+# Images
+images/avatars/
+images/captchas/
+images/smileys/
+images/member_photos/
+images/signature_attachments/
+images/pm_attachments/
+
+# Caches
+sized/
+thumbs/
+_thumbs/
+*/expressionengine/cache/*
