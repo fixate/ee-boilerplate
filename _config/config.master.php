@@ -11,12 +11,12 @@
  *
  * Some config settings are used in multiple (but not all) environments. You will
  * see the use of conditionals around the ENV constant in this file. This constant is
- * defined in ./config/config.env.php
+ * defined in ./_config/config.env.php
  *
- * All config files are stored in the ./config/ directory and this master file is "required"
+ * All config files are stored in the ./_config/ directory and this master file is "required"
  * in system/expressionengine/config/config.php and system/expressionengine/config/database.php
  *
- * require $_SERVER['DOCUMENT_ROOT'] . '/../config/config.master.php';
+ * require $_SERVER['DOCUMENT_ROOT'] . '/../_config/config.master.php';
  *
  * This config setup is a combination of inspiration from Matt Weinberg and Leevi Graham
  * @link       http://eeinsider.com/articles/multi-server-setup-for-ee-2/
@@ -242,10 +242,10 @@ if (isset($config))
 	 * Load our environment-specific config file
 	 * May contain override values from similar above settings
 	 *
-	 * @see config/config.local.php
-	 * @see config/config.dev.php
-	 * @see config/config.stage.php
-	 * @see config/config.prod.php
+	 * @see _config/config.local.php
+	 * @see _config/config.dev.php
+	 * @see _config/config.stage.php
+	 * @see _config/config.prod.php
 	 */
 	require $_SERVER['DOCUMENT_ROOT'] . '/assets/_config/config.' . ENV . '.php';
 
@@ -261,7 +261,9 @@ if (isset($config))
 	global $assign_to_config;
 	if( ! isset($assign_to_config['global_vars']))
 	{
-		$assign_to_config['global_vars'] = array();
+    $assign_to_config['global_vars'] = array(
+      'ga_uacode' => false
+    );
 	}
 
 	// Start our array with environment variables. This gives us {global:env} and {global:env_full} tags for our templates.
@@ -291,4 +293,4 @@ if (isset($config))
 
 
 /* End of file config.master.php */
-/* Location: ./config/config.master.php */
+/* Location: ./_config/config.master.php */
