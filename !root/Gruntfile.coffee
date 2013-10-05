@@ -28,7 +28,7 @@ module.exports = (grunt) ->
           sourceMap: true
         files: [{
           expand: true,
-          cwd: '<%= pkg.path.theme %>/scripts',
+          cwd: '<%= pkg.path.assets %>/scripts',
           src: '{,*/}*.coffee',
           dest: '.tmp',
           ext: '.js'
@@ -41,12 +41,12 @@ module.exports = (grunt) ->
         cacheLocation: '<%= pkg.path.scss %>/.sass-cache'
       dev:
         files:
-          '<%= pkg.path.theme %>/style.css': '<%= pkg.path.scss %>/style.scss'
+          '<%= pkg.path.css %>/style.css': '<%= pkg.path.scss %>/style.scss'
       dist:
         options:
           style: 'compressed'
         files:
-          '<%= pkg.path.theme %>/style.min.css': '<%= pkg.path.scss %>/style.scss'
+          '<%= pkg.path.css %>/style.min.css': '<%= pkg.path.scss %>/style.scss'
 
     # Optimise images
     imageoptim:
@@ -79,13 +79,13 @@ module.exports = (grunt) ->
 
     # Execute shell commands
     shell:
-      # Generate relative symlinks from styleguide to theme
+      # Generate relative symlinks from styleguide to site assets
       styleguide:
         command: [
           'cd styleguide',
-          'ln -s ../<%= pkg.path.theme %>/style.css',
-          'ln -s ../<%= pkg.path.theme %>/fnt',
-          'ln -s ../<%= pkg.path.theme %>/img'
+          'ln -s ../<%= pkg.path.css %>/style.css',
+          'ln -s ../<%= pkg.path.assets %>/_fnt',
+          'ln -s ../<%= pkg.path.img %>'
         ].join('&&'),
         options:
           stdout:true
@@ -97,10 +97,10 @@ module.exports = (grunt) ->
           'kss-node styleguide/kss/docs styleguide/build --template styleguide/kss/template',
           'cd styleguide/build/public',
           'rm style.css',
-          'ln -s ../../../<%= pkg.path.theme %>/style.css',
-          'ln -s ../../../<%= pkg.path.theme %>/img',
-          'ln -s ../../../<%= pkg.path.theme %>/fnt',
-          'ln -s ../../../<%= pkg.path.theme %>/js'
+          'ln -s ../../../<%= pkg.path.css %>/style.css',
+          'ln -s ../../../<%= pkg.path.img %>',
+          'ln -s ../../../<%= pkg.path.assets %>/_fnt',
+          'ln -s ../../../<%= pkg.path.js %>'
         ].join('&&'),
         options:
           stdout: true
@@ -130,10 +130,10 @@ module.exports = (grunt) ->
         files: 'Gruntfile.coffee',
         tasks: ['coffeelint']
       coffee:
-        files: ['<%= pkg.path.theme %>/scripts/{,*/}*.coffee'],
+        files: ['<%= pkg.path.assets %>/scripts/{,*/}*.coffee'],
         tasks: ['build-coffee', 'uglify:dist']
       js:
-        files: ['<%= pkg.path.theme %>/scripts/**/*.js'],
+        files: ['<%= pkg.path.assets %>/scripts/**/*.js'],
         tasks: ['uglify:dist', 'copy:libs']
       css:
         files: ['<%= pkg.path.scss %>/**/*.scss'],
