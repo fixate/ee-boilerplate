@@ -6,7 +6,7 @@ This is a boilerplate for ExpressionEngine projects. It is largely based on the 
 
 - supports multiple environments via custom configs
 - includes a [Grunt](http://github.com/grunt) config for automating tasks (CSS, JS, optimisation, shell tasks)
-- third party addons are easier maintain outside of ExpressionEngine
+- third party addons are easier to maintain outside of ExpressionEngine
 - includes [H5BP](http://h5bp.com) .htaccess
 
 ## Usage
