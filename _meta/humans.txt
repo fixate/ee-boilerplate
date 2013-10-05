@@ -1,9 +1,45 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
 /* TEAM */
-Developer/Designer: Reusser Design, LLC
-Site: http://reusserdesign.com
-Twitter: @reusserdesign
-Location: Roanoke, Indiana
+	Ms: Alison Hugo
+	Site: http://fixate.it
+	Location: Johannesburg, South Africa
+
+	Ms: Cassandra Zamparini
+	Site: http://fixate.it
+	Location: Johannesburg, South Africa
+
+	Mr: Larry Botha
+	Site: http://fixate.it
+	Location: Johannesburg, South Africa
+
+	Mr: Stan Bondi
+	Site: http://fixate.it
+	Location: Johannesburg, South Africa
 
 /* SITE */
-Standards: HTML5, CSS3
-Software: ExpressionEngine
+	Standards: HTML5, CSS, PHP, Apache
+	Components: Wordpress, jQuery
+	Software: Illustrator, Vim, Sass
+
+
+           ,ooooooooooooooooodc
+           oXXXXXXXXXXXXXXXXXNO.
+           oXXXKOxxxxxxxxxxxxxl
+           oXXXO;
+           oXXXO;
+           oXXXO;
+           oXXXO:..........
+         ,o0XXXXK0000000000l
+        .o0XXXXXXXXXXXXXXXNd
+          .xXXXKdcccccccccc'
+           oXXXO;
+           oXXXO;
+           oXXXO;
+           oXXXO;
+           oXXXO;
+           l0KKk,
+           .....
+
