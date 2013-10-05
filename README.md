@@ -11,11 +11,11 @@ This is a boilerplate for ExpressionEngine projects. It is largely based on the 
 
 ## Usage
 
-- add this repo to the root of your EE installation
-- move the contents of /!root to the root of your EE installation
-- update `system/expressionengine/config/config.php` and `system/expressionengine/config/database.php` as per [config.master.php]( _config/config.master.php#L19 )
-- update the config files at `_config/` as per your environments
-- party time
+1. add this repo to the root of your EE installation
+2. move the contents of /!root to the root of your EE installation
+3. update `system/expressionengine/config/config.php` and `system/expressionengine/config/database.php` as per [config.master.php]( _config/config.master.php#L19 )
+4. update the config files at `_config/` as per your environments
+5. party time
 
 ### Licence
 
