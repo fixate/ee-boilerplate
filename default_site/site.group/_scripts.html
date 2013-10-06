@@ -1,7 +1,7 @@
-{if ga_uacode && global:env == 'prod'}
+{if gv_ga_uacode && global:env == 'prod'}
 <script>
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{ga_uacode}']);
+  _gaq.push(['_setAccount', '{gv_ga_uacode}']);
   _gaq.push(['_trackPageview']);
   (function() {
     var ga = document.createElement('script');

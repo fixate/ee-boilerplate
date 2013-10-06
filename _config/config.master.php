@@ -16,7 +16,7 @@
  * All config files are stored in the ./_config/ directory and this master file is "required"
  * in system/expressionengine/config/config.php and system/expressionengine/config/database.php
  *
- * require $_SERVER['DOCUMENT_ROOT'] . '/../_config/config.master.php';
+ * require $_SERVER['DOCUMENT_ROOT'] . '/assets/_config/config.master.php';
  *
  * This config setup is a combination of inspiration from Matt Weinberg and Leevi Graham
  * @link       http://eeinsider.com/articles/multi-server-setup-for-ee-2/
@@ -262,7 +262,7 @@ if (isset($config))
 	if( ! isset($assign_to_config['global_vars']))
 	{
     $assign_to_config['global_vars'] = array(
-      'ga_uacode' => false
+      'gv_ga_uacode' => false
     );
 	}
 
