@@ -133,6 +133,12 @@ if (isset($config))
 	$env_config['stash_bots'] = array('bot', 'crawl', 'spider', 'archive', 'search', 'java', 'yahoo', 'teoma');
 
 
+  /**
+   * SnippetsSync only enabled in development
+   */
+  // $env_config['snippetssync_production_mode_override'] = (ENV == 'dev') ? TRUE : FALSE;
+
+
 	/**
 	 * Custom upload directory paths
 	 *
